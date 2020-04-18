@@ -1,0 +1,6 @@
+{
+  "Bearer": "my token",
+  "Id-Token": "id token",
+  "Origin": "https://www.mysite",
+  "Referrer": "https://www.mysite/referrer"
+}
