@@ -26,7 +26,6 @@ task loadTest(type: JavaExec) {
     ]
     main = "io.gatling.app.Gatling"
     args = [
-            "--simulation", "GatlingTest",
             "--simulation", "GetEmployeesListTest",
             "--results-folder", "${buildDir}/gatling-results",
             "--binaries-folder", sourceSets.test.output.classesDir.toString(),
