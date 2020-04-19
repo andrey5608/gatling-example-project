@@ -9,6 +9,12 @@ class GetEmployeesListTest extends Simulation {
   val jsonHeaders: String = scala.io.Source.fromFile("./src/test/resources/headers.json").mkString
   val jsonMap = JSON.parseFull(jsonHeaders).getOrElse(0).asInstanceOf[Map[String, String]]
   val innerMap = jsonMap.asInstanceOf[Map[String, String]]
+
+  private val baseUrl = "https://server-url"
+  private val contentType = "text/plain"
+  private val endpoint = "/query-part"
+  private val usersCount = 10
+
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
     .inferHtmlResources()
@@ -33,10 +39,6 @@ class GetEmployeesListTest extends Simulation {
         .check(status.is(200)))
     }
   innerMap.keys //will give keys
-  private val baseUrl = "https://server-url"
-  private val contentType = "text/plain"
-  private val endpoint = "/query-part"
-  private val usersCount = 10
 
   setUp(
     scn.inject(

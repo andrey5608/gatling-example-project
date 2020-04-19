@@ -28,7 +28,6 @@ task loadTest(type: JavaExec) {
     args = [
             "--simulation", "GetEmployeesListTest",
             "--results-folder", "${buildDir}/gatling-results",
-            "--binaries-folder", sourceSets.test.output.classesDir.toString(),
-            "--bodies-folder", sourceSets.test.resources.srcDirs.toList().first().toString() + "/gatling/bodies",
+            "--binaries-folder", sourceSets.test.output.classesDir.toString()
     ]
 }
